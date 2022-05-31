@@ -9,6 +9,14 @@ buttons.map(buttonClick => {buttonClick.addEventListener('click',(e) => {
     case '←':
         display.innerText = display.innerText.slice(0,-1)
         break
+    case '=':
+        try{
+          display.innerText = eval(display.innerText)
+        }
+        catch{
+          display.innerText = 'ERROR'
+        }        
+        break
     
     default:
         display.innerText += e.target.innerText
